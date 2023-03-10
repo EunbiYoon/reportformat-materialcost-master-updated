@@ -12,9 +12,10 @@ from email.mime.application import MIMEApplication
 import os
 
 #####지난번에 했던 결과 소환
-FL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0215/result_0220.xlsx', sheet_name="FL")
-TL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0215/result_0220.xlsx', sheet_name="TL")
-DR_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0215/result_0220.xlsx', sheet_name="DR")
+FL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0306/result_0306.xlsx', sheet_name="F3U8CNU3W.ABWEUUS_result")
+TL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0306/result_0306.xlsx', sheet_name="T1889EFHUW.ABWEUUS_result")
+DR_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0306/result_0306.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_result")
+
 
 
 ######데이터 정리
@@ -53,7 +54,7 @@ FL_html=FL_html.replace('<th style="padding:7px;color:white;background-color:rgb
 FL_html=FL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Material Cost</th>','<th style="padding:7px;color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Material Cost</th>')
 FL_html=FL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">vs BOM</th>','<th style="padding:7px;color:black;background-color:rgb(242,242,242); border:1px solid black; border-collapse: collapse;">vs BOM</th>')
 FL_html=FL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">PO Price Change</th>','<th style="padding:7px;color:black;background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</th>')
-FL_html=FL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="padding:7px;color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change Change</th>')
+FL_html=FL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="padding:7px;color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</th>')
 FL_html=FL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>','<th style="padding:7px;color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>')
 FL_html=FL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>','<th style="padding:7px;color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>')
 
@@ -73,7 +74,7 @@ TL_html=TL_html.replace('<th style="padding:7px;color:white;background-color:rgb
 TL_html=TL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Material Cost</th>','<th style="padding:7px;color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Material Cost</th>')
 TL_html=TL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">vs BOM</th>','<th style="padding:7px;color:black;background-color:rgb(242,242,242); border:1px solid black; border-collapse: collapse;">vs BOM</th>')
 TL_html=TL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">PO Price Change</th>','<th style="padding:7px;color:black;background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</th>')
-TL_html=TL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="padding:7px;color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change Change</th>')
+TL_html=TL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="padding:7px;color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</th>')
 TL_html=TL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>','<th style="padding:7px;color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>')
 TL_html=TL_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>','<th style="padding:7px;color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>')
 
@@ -93,13 +94,12 @@ DR_html=DR_html.replace('<th style="padding:7px;color:white;background-color:rgb
 DR_html=DR_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Material Cost</th>','<th style="padding:7px;color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Material Cost</th>')
 DR_html=DR_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">vs BOM</th>','<th style="padding:7px;color:black;background-color:rgb(242,242,242); border:1px solid black; border-collapse: collapse;">vs BOM</th>')
 DR_html=DR_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">PO Price Change</th>','<th style="padding:7px;color:black;background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</th>')
-DR_html=DR_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="padding:7px;color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change Change</th>')
+DR_html=DR_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="padding:7px;color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</th>')
 DR_html=DR_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>','<th style="padding:7px;color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>')
 DR_html=DR_html.replace('<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>','<th style="padding:7px;color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>')
 
 
-
-
+#html - table
 server = smtplib.SMTP('lgekrhqmh01.lge.com:25')
 server.ehlo()
 
@@ -114,14 +114,14 @@ msg['Cc']='ethan.son@lge.com, jongseop.kim@lge.com, richard.song@lge.com, minhyo
 msg['Bcc']='eunbi1.yoon@lge.com'
 
 #Subject 꾸미기
-msg['Subject']='[테네시 재료비 관리 Task] 2월 3주차 BOM과 실제 생산 투입 재료비 차이 분석'
+msg['Subject']='[테네시 재료비 관리 Task] 3월 2주차 BOM과 실제 생산 투입 재료비 차이 분석'
 
 # html table attach
 FL_attach = MIMEText(FL_html, "html")
 TL_attach = MIMEText(TL_html, "html")
 DR_attach = MIMEText(DR_html, "html")
 
-msg.attach(MIMEText('<h4 style="font-weight:300;font-family:sans-serif; color:black">Dear All, <br/><br/>I apologized that I sent wrong email and this is recent updated report.<br/>I would like to share TN Production Site 3 Main Model Material Cost Trend.<br/>Please refer to the attachment and below information.<br/>Thank you,<br/><br/></h4>','html'))
+msg.attach(MIMEText('<h4 style="font-weight:300;font-family:sans-serif; color:black">Dear All, <br/><br/>I would like to share TN Production Site 3 Main Model Material Cost Trend.<br/>Please refer to the attachment and below information.<br/>Thank you,<br/><br/></h4>','html'))
 msg.attach(MIMEText('<h3 style="font-family:sans-serif; color:grey">Front Loader - F3U8CNU3W.ABWEUUS</h3>','html'))
 msg.attach(FL_attach)
 msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Top Loader - T1889EFHUW.ABWEUUS</h3>','html'))
@@ -131,24 +131,24 @@ msg.attach(DR_attach)
 
 
 #첨부 파일1
-etcFileName='FL_BOM_Comparison_0220.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0215/BOM Comparision_FL.xlsx', 'rb') as etcFD : 
+etcFileName='FL_BOM_Comparison_0306.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0306/BOM Comparison_FL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일2
-etcFileName='TL_BOM_Comparison_0220.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0215/BOM Comparision_TL.xlsx', 'rb') as etcFD : 
+etcFileName='TL_BOM_Comparison_0306.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0306/BOM Comparison_TL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일3
-etcFileName='DR_BOM_Comparison_0220.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0215/BOM Comparision_DR.xlsx', 'rb') as etcFD : 
+etcFileName='DR_BOM_Comparison_0306.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0306/BOM Comparison_DR.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
@@ -156,8 +156,8 @@ with open('C:/Users/RnD Workstation/Documents/NPTGERP/0215/BOM Comparision_DR.xl
 
 
 #첨부 파일4
-etcFileName='result_0220.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0215/result_0220.xlsx', 'rb') as etcFD : 
+etcFileName='result_0306.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0306/result_0306.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
