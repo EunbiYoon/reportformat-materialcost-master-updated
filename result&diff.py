@@ -12,13 +12,13 @@ from email.mime.application import MIMEApplication
 import os
 
 #####지난번에 했던 결과 소환
-FL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0313/result_0313.xlsx', sheet_name="F3U8CNU3W.ABWEUUS_result")
-TL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0313/result_0313.xlsx', sheet_name="T1889EFHUW.ABWEUUS_result")
-DR_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0313/result_0313.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_result")
+FL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0414/result_0414.xlsx', sheet_name="F3U8CNU3W.ABWEUUS_result")
+TL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0414/result_0414.xlsx', sheet_name="T1889EFHUW.ABWEUUS_result")
+DR_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0414/result_0414.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_result")
 
-FL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0313/result_0313.xlsx', sheet_name="F3U8CNU3W.ABWEUUS_worst item")
-TL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0313/result_0313.xlsx', sheet_name="T1889EFHUW.ABWEUUS_worst item")
-DR_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0313/result_0313.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_worst item")
+FL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0414/result_0414.xlsx', sheet_name="F3U8CNU3W.ABWEUUS_worst item")
+TL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0414/result_0414.xlsx', sheet_name="T1889EFHUW.ABWEUUS_worst item")
+DR_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0414/result_0414.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_worst item")
 
 
 ######데이터 정리
@@ -114,21 +114,21 @@ DR_html=DR_html.replace('<th style="padding:7px;color:white;background-color:rgb
 FL_diff=FL_diff_result.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
 FL_diff=FL_diff.replace("text-align: right;","text-align: center;")
-FL_diff=FL_diff.replace('<td>','<td style="width:150px; background-color:white; border:1px solid grey; border-collapse: collapse;">')
+FL_diff=FL_diff.replace('<td>','<td style= background-color:white; border:1px solid grey; border-collapse: collapse;">')
 FL_diff=FL_diff.replace('<th>','<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">')
 
 #html - table
 TL_diff=TL_diff_result.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
 TL_diff=TL_diff.replace("text-align: right;","text-align: center;")
-TL_diff=TL_diff.replace('<td>','<td style="width:150px; background-color:white; border:1px solid grey; border-collapse: collapse;">')
+TL_diff=TL_diff.replace('<td>','<td style= background-color:white; border:1px solid grey; border-collapse: collapse;">')
 TL_diff=TL_diff.replace('<th>','<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">')
 
 #html - table
 DR_diff=DR_diff_result.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
 DR_diff=DR_diff.replace("text-align: right;","text-align: center;")
-DR_diff=DR_diff.replace('<td>','<td style="width:150px; background-color:white; border:1px solid grey; border-collapse: collapse;">')
+DR_diff=DR_diff.replace('<td>','<td style= background-color:white; border:1px solid grey; border-collapse: collapse;">')
 DR_diff=DR_diff.replace('<th>','<th style="padding:7px;color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">')
 
 
@@ -141,12 +141,12 @@ msg=MIMEMultipart()
 
 # 수신자 발신자 지정
 msg['From']='eunbi1.yoon@lge.com'
-msg['To']='iggeun.kwon@lge.com, sehee.aiello@lge.com, jacey.jung@lge.com, gilnam.lee@lge.com, steven.yang@lge.com, jajoon1.koo@lge.com, wolyong.ha@lge.com, dowan.han@lge.com'
+msg['To']='iggeun.kwon@lge.com, incheol.kang@lge.com, sehee.aiello@lge.com, jacey.jung@lge.com, gilnam.lee@lge.com, steven.yang@lge.com, jajoon1.koo@lge.com, wolyong.ha@lge.com, dowan.han@lge.com'
 msg['Cc']='ethan.son@lge.com, jongseop.kim@lge.com, richard.song@lge.com, minhyoung.sun@lge.com, kitae3.park@lge.com, tg.kim@lge.com'
 msg['Bcc']='eunbi1.yoon@lge.com'
 
 #Subject 꾸미기
-msg['Subject']='[테네시 재료비 관리 Task] 3월 3주차 BOM과 실제 생산 투입 재료비 차이 분석'
+msg['Subject']='[테네시 재료비 관리 Task] 4월 2주차 BOM과 실제 생산 투입 재료비 차이 분석'
 
 # html table attach
 FL_attach = MIMEText(FL_html, "html")
@@ -157,39 +157,42 @@ TL_attach_diff = MIMEText(TL_diff, "html")
 DR_attach_diff = MIMEText(DR_diff, "html")
 
 msg.attach(MIMEText('<h4 style="font-weight:300;font-family:sans-serif; color:black">Dear All, <br/><br/>I would like to share TN Production Site 3 Main Model Material Cost Trend.<br/>Please refer to the attachment and below information.<br/>Thank you,<br/><br/></h4>','html'))
-msg.attach(MIMEText('<h3 style="font-family:sans-serif; color:grey">Front Loader - F3U8CNU3W.ABWEUUS</h3>','html'))
-msg.attach(FL_attach)
-msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#A50034">- NPT vs GERP Detail Worst Item','html'))
-msg.attach(FL_attach_diff)
-msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Top Loader - T1889EFHUW.ABWEUUS</h3>','html'))
-msg.attach(TL_attach)
-msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#A50034">- NPT vs GERP Detail Worst Item','html'))
-msg.attach(TL_attach_diff)
-msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Dryer - RV13D1AMAZU.ABWEUUS</h3>','html'))
+
+msg.attach(MIMEText('<h3 style="font-family:sans-serif; color:grey">Dryer - RV13D1AMAZU.ABWEUUS</h3>','html'))
 msg.attach(DR_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#A50034">- NPT vs GERP Detail Worst Item','html'))
 msg.attach(DR_attach_diff)
 
+msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Top Loader - T1889EFHUW.ABWEUUS</h3>','html'))
+msg.attach(TL_attach)
+msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#A50034">- NPT vs GERP Detail Worst Item','html'))
+msg.attach(TL_attach_diff)
+
+msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Front Loader - F3U8CNU3W.ABWEUUS</h3>','html'))
+msg.attach(FL_attach)
+msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#A50034">- NPT vs GERP Detail Worst Item','html'))
+msg.attach(FL_attach_diff)
+
 
 #첨부 파일1
-etcFileName='FL_BOM_Comparison_0313.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0313/BOM Comparison_FL.xlsx', 'rb') as etcFD : 
+etcFileName='FL_BOM_Comparison_0414.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0414/BOM Comparison_FL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일2
-etcFileName='TL_BOM_Comparison_0313.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0313/BOM Comparison_TL.xlsx', 'rb') as etcFD : 
+etcFileName='TL_BOM_Comparison_0414.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0414/BOM Comparison_TL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일3
-etcFileName='DR_BOM_Comparison_0313.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0313/BOM Comparison_DR.xlsx', 'rb') as etcFD : 
+etcFileName='DR_BOM_Comparison_0414.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0414/BOM Comparison_DR.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
@@ -197,8 +200,8 @@ with open('C:/Users/RnD Workstation/Documents/NPTGERP/0313/BOM Comparison_DR.xls
 
 
 #첨부 파일4
-etcFileName='result_0313.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0313/result_0313.xlsx', 'rb') as etcFD : 
+etcFileName='result_0414.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0414/result_0414.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
