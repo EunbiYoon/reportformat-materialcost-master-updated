@@ -17,12 +17,15 @@ index_list=list(read_excel['Unnamed: 0'])
 index_json=json.dumps(index_list)
 
 #value_list
-value_list=list(read_excel.values)
+value_list=str(list(read_excel.values)).replace('array(', '').replace(", dtype=object)","")
 
 #json file format
-merger=Merger(column_json)
-result=merger.merge(column_json)
-pprint(result)
+columns=column_list
+rows=index_list
+values=value_list
+json_object={"columns":columns, "index":rows, "values":value_list}
+jj=json.dumps(json_object)
+print(jj)
 
 
 
