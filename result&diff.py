@@ -12,13 +12,13 @@ from email.mime.application import MIMEApplication
 import os
 
 #####지난번에 했던 결과 소환
-FL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0428/result_0428.xlsx', sheet_name="F3U8CNU3W.ABWEUUS_result")
-TL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0428/result_0428.xlsx', sheet_name="T1889EFHUW.ABWEUUS_result")
-DR_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0428/result_0428.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_result")
+FL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0519/result_0519.xlsx', sheet_name="F3P2CYUBW.ABWEUUS_result")
+TL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0519/result_0519.xlsx', sheet_name="T1889EFHUW.ABWEUUS_result")
+DR_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0519/result_0519.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_result")
 
-FL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0428/result_0428.xlsx', sheet_name="F3U8CNU3W.ABWEUUS_worst item")
-TL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0428/result_0428.xlsx', sheet_name="T1889EFHUW.ABWEUUS_worst item")
-DR_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0428/result_0428.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_worst item")
+FL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0519/result_0519.xlsx', sheet_name="F3P2CYUBW.ABWEUUS_worst item")
+TL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0519/result_0519.xlsx', sheet_name="T1889EFHUW.ABWEUUS_worst item")
+DR_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0519/result_0519.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_worst item")
 
 a=FL_last_result.to_json()
 print(anext)
@@ -148,7 +148,7 @@ msg['From']='eunbi1.yoon@lge.com'
 msg['Bcc']='eunbi1.yoon@lge.com'
 
 #Subject 꾸미기
-msg['Subject']='[테네시 재료비 관리 Task] 4월 4주차 BOM과 실제 생산 투입 재료비 차이 분석'
+msg['Subject']='[테네시 재료비 관리 Task] 5월 3주차 BOM과 실제 생산 투입 재료비 차이 분석'
 
 # html table attach
 FL_attach = MIMEText(FL_html, "html")
@@ -170,31 +170,31 @@ msg.attach(TL_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#A50034">- NPT vs GERP Detail Worst Item','html'))
 msg.attach(TL_attach_diff)
 
-msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Front Loader - F3U8CNU3W.ABWEUUS</h3>','html'))
+msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Front Loader - F3P2CYUBW.ABWEUUS</h3>','html'))
 msg.attach(FL_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#A50034">- NPT vs GERP Detail Worst Item','html'))
 msg.attach(FL_attach_diff)
 
 
 #첨부 파일1
-etcFileName='FL_BOM_Comparison_0428.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0428/BOM Comparison_FL.xlsx', 'rb') as etcFD : 
+etcFileName='FL_BOM_Comparison_0519.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0519/BOM Comparison_FL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일2
-etcFileName='TL_BOM_Comparison_0428.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0428/BOM Comparison_TL.xlsx', 'rb') as etcFD : 
+etcFileName='TL_BOM_Comparison_0519.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0519/BOM Comparison_TL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일3
-etcFileName='DR_BOM_Comparison_0428.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0428/BOM Comparison_DR.xlsx', 'rb') as etcFD : 
+etcFileName='DR_BOM_Comparison_0519.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0519/BOM Comparison_DR.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
@@ -202,8 +202,8 @@ with open('C:/Users/RnD Workstation/Documents/NPTGERP/0428/BOM Comparison_DR.xls
 
 
 #첨부 파일4
-etcFileName='result_0428.xlsx'
-with open('C:/Users/RnD Workstation/Documents/NPTGERP/0428/result_0428.xlsx', 'rb') as etcFD : 
+etcFileName='result_0519.xlsx'
+with open('C:/Users/RnD Workstation/Documents/NPTGERP/0519/result_0519.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
@@ -212,7 +212,7 @@ with open('C:/Users/RnD Workstation/Documents/NPTGERP/0428/result_0428.xlsx', 'r
 
 
 #메세지 보내고 확인하기
-# server.send_message(msg)
+server.send_message(msg)
 server.close()
 print("Sucess!!!")
 
