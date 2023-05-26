@@ -23,7 +23,7 @@
         <th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Prod Qty</th>
         <td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Result</td>
         <td id="cell2" style="background-color:white; border:1px solid grey; border-collapse: collapse;">9318.0</td>
-        <td style="background-color:white; border:1px solid grey; border-collapse: collapse;">9318.0</td>
+        <td id="cell2" style="background-color:white; border:1px solid grey; border-collapse: collapse;">9318.0</td>
         <td style="background-color:white; border:1px solid grey; border-collapse: collapse;">9318.0</td>
       </tr>
       <tr>
@@ -92,9 +92,9 @@
     </tbody>
   </table>
   <script>
-    var cell2=document.getElementById("cell2");
-    var cell2Value=parseInt(cell2.innerText);
-    if (cell2Value>3){
+    var cell2List=document.querySelectorAll('#cell2');
+    for (var i=0; i<cell2List.length; i++){
+      var cell2=cell2List[i];
       cell2.style.backgroundColor="blue";
     }
   </script>
