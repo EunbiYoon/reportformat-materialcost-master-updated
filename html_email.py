@@ -58,70 +58,94 @@ FL_html=FL_blank.to_html().replace('<table border="1" class="dataframe">','<tabl
 FL_html=FL_html.replace("text-align: right;","text-align: center;")
 #html - th,td
 FL_html=FL_html.replace('<td>','<td style="background-color:white; border:1px solid black; border-collapse: collapse;">')
-FL_html=FL_html.replace('<th>','<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">')
+FL_html=FL_html.replace('<th>','<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">')
 #white row : production qty / bom material cost/ 
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Production Qty</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Production Qty</th>')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">PAC</th>','<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Material Cost</th>')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">vs BOM</th>','<th style="color:black;background-color:rgb(242,242,242); border:1px solid black; border-collapse: collapse;">vs BOM</th>')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">PO Price Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</th>')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</th>')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Production Qty</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Production Qty</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">PAC</th>','<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Material Cost</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">vs BOM</th>','<th style="color:black;background-color:rgb(242,242,242); border:1px solid black; border-collapse: collapse;">vs BOM</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">PO Price Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>')
 
 #merge cell - column
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Unnamed: 1</th>','')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;"></th>','<th colspan="2" style="background-color:white; border-bottom:1px solid black; border-left:1px solid black; border-collapse: collapse;"></th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Unnamed: 1</th>','')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;"></th>','<th colspan="2" style="color:navy; background-color:#DEDBFF">Index</th>')
 
 #merge cell - row1
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">NaN</th>','')
-FL_html=FL_html.replace('<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>','<th rowspan="4" style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
+FL_html=FL_html.replace('<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>','<th rowspan="4" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">PAC</th>')
 
 #merge cell - row2
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">NaN</th>','')
-FL_html=FL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
 
-print(FL_html)
+
 ###TL
 #html - table
-TL_html=TL_blank.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
+TL_html=TL_blank.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="padding:7px; border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
 TL_html=TL_html.replace("text-align: right;","text-align: center;")
 #html - th,td
 TL_html=TL_html.replace('<td>','<td style="background-color:white; border:1px solid black; border-collapse: collapse;">')
-TL_html=TL_html.replace('<th>','<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">')
+TL_html=TL_html.replace('<th>','<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">')
 #white row : production qty / bom material cost/ 
-TL_html=TL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Production Qty</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Production Qty</th>')
-TL_html=TL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>')
-TL_html=TL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">PAC</th>','<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>')
-TL_html=TL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Material Cost</th>')
-TL_html=TL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">vs BOM</th>','<th style="color:black;background-color:rgb(242,242,242); border:1px solid black; border-collapse: collapse;">vs BOM</th>')
-TL_html=TL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">PO Price Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</th>')
-TL_html=TL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</th>')
-TL_html=TL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>')
-TL_html=TL_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Production Qty</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Production Qty</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">PAC</th>','<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Material Cost</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">vs BOM</th>','<th style="color:black;background-color:rgb(242,242,242); border:1px solid black; border-collapse: collapse;">vs BOM</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">PO Price Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>')
+
+#merge cell - column
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Unnamed: 1</th>','')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;"></th>','<th colspan="2" style="color:navy; background-color:#DEDBFF">Index</th>')
+
+#merge cell - row1
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
+TL_html=TL_html.replace('<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>','<th rowspan="4" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">PAC</th>')
+
+#merge cell - row2
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
+
 
 
 ###DR
 #html - table
-DR_html=DR_blank.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
+DR_html=DR_blank.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="padding:7px; border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
 DR_html=DR_html.replace("text-align: right;","text-align: center;")
 #html - th,td
 DR_html=DR_html.replace('<td>','<td style="background-color:white; border:1px solid black; border-collapse: collapse;">')
-DR_html=DR_html.replace('<th>','<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">')
+DR_html=DR_html.replace('<th>','<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">')
 #white row : production qty / bom material cost/ 
-DR_html=DR_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Production Qty</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Production Qty</th>')
-DR_html=DR_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>')
-DR_html=DR_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">PAC</th>','<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>')
-DR_html=DR_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Material Cost</th>')
-DR_html=DR_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">vs BOM</th>','<th style="color:black;background-color:rgb(242,242,242); border:1px solid black; border-collapse: collapse;">vs BOM</th>')
-DR_html=DR_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">PO Price Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</th>')
-DR_html=DR_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</th>')
-DR_html=DR_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>')
-DR_html=DR_html.replace('<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Production Qty</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Production Qty</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">BOM Material Cost</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">PAC</th>','<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Material Cost</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">vs BOM</th>','<th style="color:black;background-color:rgb(242,242,242); border:1px solid black; border-collapse: collapse;">vs BOM</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">PO Price Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Substitute Change</th>','<th style="color:black;background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Overhead Material Cost</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid black; border-collapse: collapse;">Defect Material Cost</th>')
 
+#merge cell - column
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">Unnamed: 1</th>','')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;"></th>','<th colspan="2" style="color:navy; background-color:#DEDBFF">Index</th>')
+
+#merge cell - row1
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
+DR_html=DR_html.replace('<th style="color:black;background-color:rgb(191,191,191); border:1px solid black; border-collapse: collapse;">PAC</th>','<th rowspan="4" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">PAC</th>')
+
+#merge cell - row2
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
 
 
 #html - table
@@ -129,21 +153,21 @@ FL_diff=FL_diff_result.to_html().replace('<table border="1" class="dataframe">',
 #column align center
 FL_diff=FL_diff.replace("text-align: right;","text-align: center;")
 FL_diff=FL_diff.replace('<td>','<td style= background-color:white; border:1px solid grey; border-collapse: collapse;">')
-FL_diff=FL_diff.replace('<th>','<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">')
+FL_diff=FL_diff.replace('<th>','<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">')
 
 #html - table
 TL_diff=TL_diff_result.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
 TL_diff=TL_diff.replace("text-align: right;","text-align: center;")
 TL_diff=TL_diff.replace('<td>','<td style= background-color:white; border:1px solid grey; border-collapse: collapse;">')
-TL_diff=TL_diff.replace('<th>','<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">')
+TL_diff=TL_diff.replace('<th>','<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">')
 
 #html - table
 DR_diff=DR_diff_result.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
 DR_diff=DR_diff.replace("text-align: right;","text-align: center;")
 DR_diff=DR_diff.replace('<td>','<td style= background-color:white; border:1px solid grey; border-collapse: collapse;">')
-DR_diff=DR_diff.replace('<th>','<th style="color:white;background-color:rgb(128,128,128); border:1px solid black; border-collapse: collapse;">')
+DR_diff=DR_diff.replace('<th>','<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">')
 
 
 server = smtplib.SMTP('lgekrhqmh01.lge.com:25')
@@ -160,7 +184,7 @@ msg['From']='eunbi1.yoon@lge.com'
 msg['Bcc']='eunbi1.yoon@lge.com'
 
 #Subject 꾸미기
-msg['Subject']='[테네시 재료비 관리 Task] 5월 3주차 BOM과 실제 생산 투입 재료비 차이 분석'
+msg['Subject']='[테네시 재료비 관리 Task] 5월 4주차 BOM과 실제 생산 투입 재료비 차이 분석'
 
 # html table attach
 FL_attach = MIMEText(FL_html, "html")
