@@ -235,7 +235,7 @@ FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid gr
 FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style="background-color:#75A701; color:white; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
 
 #index 0 delete
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;"></th>')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 
 ############ TL ############
