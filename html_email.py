@@ -20,9 +20,6 @@ FL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0526/re
 TL_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0526/result_0526.xlsx', sheet_name="T1889EFHUW.ABWEUUS_worst item")
 DR_diff_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0526/result_0526.xlsx', sheet_name="RV13D1AMAZU.ABWEUUS_worst item")
 
-a=FL_last_result.to_json()
-print(anext)
-
 ######데이터 정리
 #index
 FL_last_result.index=FL_last_result["Unnamed: 0"].values
@@ -205,6 +202,29 @@ FL_diff=FL_diff.replace("text-align: right;","text-align: center;")
 FL_diff=FL_diff.replace('<td>','<td style= background-color:white; border:1px solid grey; border-collapse: collapse;">')
 FL_diff=FL_diff.replace('<th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">')
 
+#remove unamed for colspan
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 7</th>','')
+
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 9</th>','')
+
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
+
+#remove unamed for colspan
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+FL_diff=FL_diff.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
+
+
 ############ TL ############
 #html - table
 TL_diff=TL_diff_result.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid grey; border-collapse:collapse; font-family:sans-serif;">')
@@ -262,6 +282,7 @@ msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Fr
 msg.attach(FL_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#5C00FE">- NPT vs GERP  Top 7 Difference Items','html'))
 msg.attach(FL_attach_diff)
+
 
 
 #첨부 파일1
