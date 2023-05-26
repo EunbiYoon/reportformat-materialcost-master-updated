@@ -215,9 +215,9 @@ FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:
 FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
 
 #remove unamed for colspan
-FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:white; background-color:#FF009B; border:1px solid grey; border-collapse: collapse;">NPT</th>')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#C1FF00; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:white;background-color:#00C5FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
 
 #remove column
 FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NaN</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
@@ -264,9 +264,9 @@ TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:
 TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
 
 #remove unamed for colspan
-TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:white; background-color:#FF009B; border:1px solid grey; border-collapse: collapse;">NPT</th>')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#C1FF00; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:white; background-color:#00C5FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
 
 #remove column
 TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NaN</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
@@ -312,9 +312,9 @@ DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:
 DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
 
 #remove unamed for colspan
-DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:white;background-color:#FF009B; border:1px solid grey; border-collapse: collapse;">NPT</th>')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#C1FF00; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:white; background-color:#00C5FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
 
 #remove column
 DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NaN</th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;"></th>')
