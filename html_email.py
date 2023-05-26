@@ -360,20 +360,20 @@ DR_attach_item = MIMEText(DR_item, "html")
 
 msg.attach(MIMEText('<h4 style="font-weight:300;font-family:sans-serif; color:black">Dear All, <br/><br/>I would like to share TN Production Site 3 Main Model Material Cost Trend.<br/>Please refer to the attachment and below information.<br/>Thank you,<br/><br/></h4>','html'))
 
-msg.attach(MIMEText('<h3 style="font-family:sans-serif; color:grey">Dryer - RV13D1AMAZU.ABWEUUS</h3>','html'))
-msg.attach(DR_attach)
+msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Front Loader - F3P2CYUBW.ABWEUUS</h3>','html'))
+msg.attach(FL_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#5C00FE">- NPT vs GERP  Top 7 Difference Items','html'))
-msg.attach(DR_attach_item)
+msg.attach(FL_attach_item)
 
 msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Top Loader - T1889EFHUW.ABWEUUS</h3>','html'))
 msg.attach(TL_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#5C00FE">- NPT vs GERP  Top 7 Difference Items','html'))
 msg.attach(TL_attach_item)
 
-msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Front Loader - F3P2CYUBW.ABWEUUS</h3>','html'))
-msg.attach(FL_attach)
+msg.attach(MIMEText('<h3 style="font-family:sans-serif; color:grey">Dryer - RV13D1AMAZU.ABWEUUS</h3>','html'))
+msg.attach(DR_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#5C00FE">- NPT vs GERP  Top 7 Difference Items','html'))
-msg.attach(FL_attach_item)
+msg.attach(DR_attach_item)
 
 
 
