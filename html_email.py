@@ -77,7 +77,7 @@ FL_html=FL_html.replace('<th style="color:black;background-color:rgb(191,191,191
 
 #merge cell - row2
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NaN</th>','')
-FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:white;background-color:#5C00FE; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
 
 # added index
 FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Result</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Result</td>')
@@ -88,7 +88,7 @@ FL_html=FL_html.replace('<td style="background-color:white; border:1px solid gre
 FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>')
 FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>')
 FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>')
-FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:550; background-color:#5C00FE; color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:550; background-color:#00FEC4; color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>')
 
 # key index color -> the other 3 changed upper line
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>','<th style="color:white;background-color:#5C00FE; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>')
@@ -122,7 +122,7 @@ TL_html=TL_html.replace('<th style="color:black;background-color:rgb(191,191,191
 
 #merge cell - row2
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NaN</th>','')
-TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:white;background-color:#5C00FE; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
 
 # added index
 TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Result</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Result</td>')
@@ -133,7 +133,7 @@ TL_html=TL_html.replace('<td style="background-color:white; border:1px solid gre
 TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>')
 TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>')
 TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>')
-TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:550; background-color:#5C00FE; color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>')
+TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:550; background-color:#00FEC4; color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>')
 
 # key index color -> the other 3 changed upper line
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>','<th style="color:white; background-color:#5C00FE; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>')
@@ -169,7 +169,7 @@ DR_html=DR_html.replace('<th style="color:black;background-color:rgb(191,191,191
 
 #merge cell - row2
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapsecollapse;">NaN</th>','')
-DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:white; background-color:#5C00FE; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:white; background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
 
 # added index
 DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Result</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Result</td>')
@@ -180,7 +180,7 @@ DR_html=DR_html.replace('<td style="background-color:white; border:1px solid gre
 DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>')
 DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>')
 DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>')
-DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:550; background-color:#5C00FE; color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>')
+DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:550; background-color:#00FEC4; color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>')
 
 # key index color -> the other 3 changed upper line
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>','<th style="color:white; background-color:#5C00FE; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>')
@@ -215,7 +215,7 @@ FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:
 
 #remove unamed for colspan
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:white;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
 
 #remove column
@@ -264,7 +264,7 @@ TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:
 
 #remove unamed for colspan
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
 
 #remove column
@@ -312,7 +312,7 @@ DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:
 
 #remove unamed for colspan
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
 
 #remove column
