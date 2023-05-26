@@ -86,7 +86,18 @@ FL_html=FL_html.replace('<th style="color:black;background-color:rgb(191,191,191
 
 #merge cell - row2
 FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
-FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
+
+# added index
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid black; border-collapse: collapse;">Result</td>','<td style="font-weight:570; background-color:#DEDBFF; color:navy; border:1px solid black; border-collapse: collapse;">Result</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid black; border-collapse: collapse;">Net</td>','<td style="font-weight:570; background-color:#DEDBFF; color:navy; border:1px solid black; border-collapse: collapse;">Net</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid black; border-collapse: collapse;">Total</td>','<td style="font-weight:570; background-color:#DEDBFF; color:navy; border:1px solid black; border-collapse: collapse;">Total</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid black; border-collapse: collapse;">Overhead</td>','<td style="font-weight:570; background-color:#DEDBFF; color:navy; border:1px solid black; border-collapse: collapse;">Overhead</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid black; border-collapse: collapse;">Defect</td>','<td style="font-weight:570; background-color:#DEDBFF; color:navy; border:1px solid black; border-collapse: collapse;">Defect</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid black; border-collapse: collapse;">PAC Net - BOM Net</td>','<td style="font-weight:570; background-color:#DEDBFF; color:navy; border:1px solid black; border-collapse: collapse;">PAC Net - BOM Net</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid black; border-collapse: collapse;">PO Price Change</td>','<td style="font-weight:570; background-color:#DEDBFF; color:navy; border:1px solid black; border-collapse: collapse;">PO Price Change</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid black; border-collapse: collapse;">Substitute Change</td>','<td style="font-weight:570; background-color:#DEDBFF; color:navy; border:1px solid black; border-collapse: collapse;">Substitute Change</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid black; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:570; background-color:#DEDBFF; color:navy; border:1px solid black; border-collapse: collapse;">PO + Substitute</td>')
 
 
 ############ TL ############
@@ -117,7 +128,7 @@ TL_html=TL_html.replace('<th style="color:black;background-color:rgb(191,191,191
 
 #merge cell - row2
 TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
-TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
 
 ############ DR ############
 #html - table
@@ -148,7 +159,7 @@ DR_html=DR_html.replace('<th style="color:black;background-color:rgb(191,191,191
 
 #merge cell - row2
 DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
-DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
 
 ################## Item Table ##################
 ############ FL ############
