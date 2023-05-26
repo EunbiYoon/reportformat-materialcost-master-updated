@@ -411,7 +411,7 @@ with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/result_0526.xlsx', 'r
     msg.attach(etcPart)
 
 
-
+print(FL_html)
 #메세지 보내고 확인하기
 server.send_message(msg)
 server.close()
