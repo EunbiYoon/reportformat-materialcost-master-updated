@@ -44,15 +44,21 @@ FL_round1=FL_last_result.round(1)
 TL_round1=TL_last_result.round(1)
 DR_round1=DR_last_result.round(1)
 
+FL_diff_result=FL_diff_result.round(1)
+TL_diff_result=TL_diff_result.round(1)
+DR_diff_result=DR_diff_result.round(1)
+
 #np.nan -> blank
 FL_blank=FL_round1.fillna('')
 TL_blank=TL_round1.fillna('')
 DR_blank=DR_round1.fillna('')
 
+FL_diff_result=FL_diff_result.fillna('')
+TL_diff_result=TL_diff_result.fillna('')
+DR_diff_result=DR_diff_result.fillna('')
 
-######html style
-###FL
-#html - table
+################## Trend Table ##################
+############ FL ############
 FL_html=FL_blank.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="padding:7px; border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
 FL_html=FL_html.replace("text-align: right;","text-align: center;")
@@ -83,8 +89,7 @@ FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:
 FL_html=FL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
 
 
-###TL
-#html - table
+############ TL ############
 TL_html=TL_blank.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="padding:7px; border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
 TL_html=TL_html.replace("text-align: right;","text-align: center;")
@@ -114,9 +119,7 @@ TL_html=TL_html.replace('<th style="color:black;background-color:rgb(191,191,191
 TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
 TL_html=TL_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
 
-
-
-###DR
+############ DR ############
 #html - table
 DR_html=DR_blank.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="padding:7px; border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
@@ -147,7 +150,8 @@ DR_html=DR_html.replace('<th style="color:black;background-color:rgb(191,191,191
 DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NaN</th>','')
 DR_html=DR_html.replace('<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="2" style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">NPT vs GERP</th>')
 
-
+################## Item Table ##################
+############ FL ############
 #html - table
 FL_diff=FL_diff_result.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
@@ -155,6 +159,7 @@ FL_diff=FL_diff.replace("text-align: right;","text-align: center;")
 FL_diff=FL_diff.replace('<td>','<td style= background-color:white; border:1px solid grey; border-collapse: collapse;">')
 FL_diff=FL_diff.replace('<th>','<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">')
 
+############ TL ############
 #html - table
 TL_diff=TL_diff_result.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
@@ -162,6 +167,7 @@ TL_diff=TL_diff.replace("text-align: right;","text-align: center;")
 TL_diff=TL_diff.replace('<td>','<td style= background-color:white; border:1px solid grey; border-collapse: collapse;">')
 TL_diff=TL_diff.replace('<th>','<th style="color:navy;background-color:#DEDBFF; border:1px solid black; border-collapse: collapse;">')
 
+############ DR ############
 #html - table
 DR_diff=DR_diff_result.to_html().replace('<table border="1" class="dataframe">','<table class="dataframe" style="border:1px solid black; border-collapse:collapse; font-family:sans-serif;">')
 #column align center
