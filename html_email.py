@@ -29,12 +29,6 @@ TL_last_result=TL_last_result.drop(["Unnamed: 0"],axis=1)
 DR_last_result.index=DR_last_result["Unnamed: 0"].values
 DR_last_result=DR_last_result.drop(["Unnamed: 0"],axis=1)
 
-FL_item_result.index=FL_item_result["Unnamed: 0"].values
-FL_item_result=FL_item_result.drop(["Unnamed: 0"],axis=1)
-TL_item_result.index=TL_item_result["Unnamed: 0"].values
-TL_item_result=TL_item_result.drop(["Unnamed: 0"],axis=1)
-DR_item_result.index=DR_item_result["Unnamed: 0"].values
-DR_item_result=DR_item_result.drop(["Unnamed: 0"],axis=1)
 
 #소숫점 1자리 맞춰주기
 FL_round1=FL_last_result.round(1)
@@ -202,22 +196,23 @@ FL_item=FL_item.replace("text-align: right;","text-align: center;")
 FL_item=FL_item.replace('<td>','<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">')
 FL_item=FL_item.replace('<th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">')
 
+print(FL_item)
 #remove unamed for colspan
+FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 1</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 7</th>','')
 
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 9</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 8</th>','')
 
+FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 16</th>','')
 
 #remove unamed for colspan
 FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
@@ -239,6 +234,8 @@ FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid gr
 FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">match</td>')
 FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
 
+#index 0 delete
+FL_Item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 ############ TL ############
 #html - table
@@ -249,21 +246,21 @@ TL_item=TL_item.replace('<td>','<td style="background-color:white; border:1px so
 TL_item=TL_item.replace('<th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">')
 
 #remove unamed for colspan
+TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 1</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 7</th>','')
 
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 9</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 8</th>','')
 
+TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 16</th>','')
 
 #remove unamed for colspan
 TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
@@ -285,7 +282,8 @@ TL_item=TL_item.replace('<td style= "background-color:white; border:1px solid gr
 TL_item=TL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">match</td>')
 TL_item=TL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
 
-
+#index 0 delete
+TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 ############ DR ############
 #html - table
@@ -296,21 +294,21 @@ DR_item=DR_item.replace('<td>','<td style= background-color:white; border:1px so
 DR_item=DR_item.replace('<th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">')
 
 #remove unamed for colspan
+DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 1</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 7</th>','')
 
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 9</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 8</th>','')
 
+DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 16</th>','')
 
 #remove unamed for colspan
 DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
@@ -331,6 +329,9 @@ DR_item=DR_item.replace('<td style= "background-color:white; border:1px solid gr
 
 DR_item=DR_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">match</td>')
 DR_item=DR_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
+
+#index 0 delete
+DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 ################################## Send email ################################## 
 server = smtplib.SMTP('lgekrhqmh01.lge.com:25')
@@ -353,26 +354,26 @@ msg['Subject']='[테네시 재료비 관리 Task] 5월 4주차 BOM과 실제 생
 FL_attach = MIMEText(FL_html, "html")
 TL_attach = MIMEText(TL_html, "html")
 DR_attach = MIMEText(DR_html, "html")
-FL_attach_diff = MIMEText(FL_item, "html")
-TL_attach_diff = MIMEText(TL_item, "html")
-DR_attach_diff = MIMEText(DR_item, "html")
+FL_attach_item = MIMEText(FL_item, "html")
+TL_attach_item = MIMEText(TL_item, "html")
+DR_attach_item = MIMEText(DR_item, "html")
 
 msg.attach(MIMEText('<h4 style="font-weight:300;font-family:sans-serif; color:black">Dear All, <br/><br/>I would like to share TN Production Site 3 Main Model Material Cost Trend.<br/>Please refer to the attachment and below information.<br/>Thank you,<br/><br/></h4>','html'))
 
 msg.attach(MIMEText('<h3 style="font-family:sans-serif; color:grey">Dryer - RV13D1AMAZU.ABWEUUS</h3>','html'))
 msg.attach(DR_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#5C00FE">- NPT vs GERP  Top 7 Difference Items','html'))
-msg.attach(DR_attach_diff)
+msg.attach(DR_attach_item)
 
 msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Top Loader - T1889EFHUW.ABWEUUS</h3>','html'))
 msg.attach(TL_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#5C00FE">- NPT vs GERP  Top 7 Difference Items','html'))
-msg.attach(TL_attach_diff)
+msg.attach(TL_attach_item)
 
 msg.attach(MIMEText('<br/><br/><h3 style="font-family:sans-serif; color:grey">Front Loader - F3P2CYUBW.ABWEUUS</h3>','html'))
 msg.attach(FL_attach)
 msg.attach(MIMEText('<h4 style="font-family:sans-serif; color:#5C00FE">- NPT vs GERP  Top 7 Difference Items','html'))
-msg.attach(FL_attach_diff)
+msg.attach(FL_attach_item)
 
 
 
