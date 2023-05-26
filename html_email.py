@@ -9,7 +9,8 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import openpyxl
 from email.mime.application import MIMEApplication 
-import os
+import os 
+
 
 #####지난번에 했던 결과 소환
 FL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0526/result_0526.xlsx', sheet_name="F3P2CYUBW.ABWEUUS_result")
@@ -62,7 +63,7 @@ FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">PAC</th>','<th style="color:black;background-color:rgb(191,191,191); border:1px solid grey; border-collapse: collapse;">PAC</th>')
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid grey; border-collapse: collapse;">Material Cost</th>')
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">vs BOM</th>','<th style="color:black;background-color:rgb(242,242,242); border:1px solid grey; border-collapse: collapse;">vs BOM</th>')
-FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">PO Price Change</th>','<th style="color:black;background-color:white; border:1px solid grey; border-collapse: collapse;">PO Price Change</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Price Change</th>','<th style="color:black;background-color:white; border:1px solid grey; border-collapse: collapse;">Price Change</th>')
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Substitute Change</th>','<th style="color:black;background-color:white; border:1px solid grey; border-collapse: collapse;">Substitute Change</th>')
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Overhead Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid grey; border-collapse: collapse;">Overhead Material Cost</th>')
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Defect Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid grey; border-collapse: collapse;">Defect Material Cost</th>')
@@ -77,7 +78,7 @@ FL_html=FL_html.replace('<th style="color:black;background-color:rgb(191,191,191
 
 #merge cell - row2
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NaN</th>','')
-FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy;background-color:#C1FF00; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
 
 # added index
 FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Result</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Result</td>')
@@ -86,9 +87,9 @@ FL_html=FL_html.replace('<td style="background-color:white; border:1px solid gre
 FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Overhead</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Overhead</td>')
 FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Defect</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Defect</td>')
 FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>')
-FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Price Change</td>')
 FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>')
-FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:550; background-color:#00FEC4; color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>')
+FL_html=FL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price + Substitute</td>','<td style="font-weight:550; background-color:#C1FF00; color:navy; border:1px solid grey; border-collapse: collapse;">Price + Substitute</td>')
 
 # key index color -> the other 3 changed upper line
 FL_html=FL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>','<th style="color:white;background-color:#5C00FE; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>')
@@ -107,7 +108,7 @@ TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">PAC</th>','<th style="color:black;background-color:rgb(191,191,191); border:1px solid grey; border-collapse: collapse;">PAC</th>')
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid grey; border-collapse: collapse;">Material Cost</th>')
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">vs BOM</th>','<th style="color:black;background-color:rgb(242,242,242); border:1px solid grey; border-collapse: collapse;">vs BOM</th>')
-TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">PO Price Change</th>','<th style="color:black;background-color:white; border:1px solid grey; border-collapse: collapse;">PO Price Change</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Price Change</th>','<th style="color:black;background-color:white; border:1px solid grey; border-collapse: collapse;">Price Change</th>')
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Substitute Change</th>','<th style="color:black;background-color:white; border:1px solid grey; border-collapse: collapse;">Substitute Change</th>')
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Overhead Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid grey; border-collapse: collapse;">Overhead Material Cost</th>')
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Defect Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid grey; border-collapse: collapse;">Defect Material Cost</th>')
@@ -122,7 +123,7 @@ TL_html=TL_html.replace('<th style="color:black;background-color:rgb(191,191,191
 
 #merge cell - row2
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NaN</th>','')
-TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy;background-color:#C1FF00; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
 
 # added index
 TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Result</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Result</td>')
@@ -131,9 +132,9 @@ TL_html=TL_html.replace('<td style="background-color:white; border:1px solid gre
 TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Overhead</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Overhead</td>')
 TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Defect</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Defect</td>')
 TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>')
-TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>')
+TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Price Change</td>')
 TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>')
-TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:550; background-color:#00FEC4; color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>')
+TL_html=TL_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price + Substitute</td>','<td style="font-weight:550; background-color:#C1FF00; color:navy; border:1px solid grey; border-collapse: collapse;">Price + Substitute</td>')
 
 # key index color -> the other 3 changed upper line
 TL_html=TL_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>','<th style="color:white; background-color:#5C00FE; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>')
@@ -154,7 +155,7 @@ DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">PAC</th>','<th style="color:black;background-color:rgb(191,191,191); border:1px solid grey; border-collapse: collapse;">PAC</th>')
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid grey; border-collapse: collapse;">Material Cost</th>')
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">vs BOM</th>','<th style="color:black;background-color:rgb(242,242,242); border:1px solid grey; border-collapse: collapse;">vs BOM</th>')
-DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">PO Price Change</th>','<th style="color:black;background-color:white; border:1px solid grey; border-collapse: collapse;">PO Price Change</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Price Change</th>','<th style="color:black;background-color:white; border:1px solid grey; border-collapse: collapse;">Price Change</th>')
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Substitute Change</th>','<th style="color:black;background-color:white; border:1px solid grey; border-collapse: collapse;">Substitute Change</th>')
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Overhead Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid grey; border-collapse: collapse;">Overhead Material Cost</th>')
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Defect Material Cost</th>','<th style="color:black;background-color:rgb(217,217,217); border:1px solid grey; border-collapse: collapse;">Defect Material Cost</th>')
@@ -169,7 +170,7 @@ DR_html=DR_html.replace('<th style="color:black;background-color:rgb(191,191,191
 
 #merge cell - row2
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapsecollapse;">NaN</th>','')
-DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:white; background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th rowspan="3" style="color:navy; background-color:#C1FF00; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
 
 # added index
 DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Result</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Result</td>')
@@ -178,9 +179,9 @@ DR_html=DR_html.replace('<td style="background-color:white; border:1px solid gre
 DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Overhead</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Overhead</td>')
 DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Defect</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Defect</td>')
 DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PAC Net - BOM Net</td>')
-DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">PO Price Change</td>')
+DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Price Change</td>')
 DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>','<td style="font-weight:550; background-color:#EFE6FF; color:navy; border:1px solid grey; border-collapse: collapse;">Substitute Change</td>')
-DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>','<td style="font-weight:550; background-color:#00FEC4; color:white; border:1px solid grey; border-collapse: collapse;">PO + Substitute</td>')
+DR_html=DR_html.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price + Substitute</td>','<td style="font-weight:550; background-color:#C1FF00; color:navy; border:1px solid grey; border-collapse: collapse;">Price + Substitute</td>')
 
 # key index color -> the other 3 changed upper line
 DR_html=DR_html.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>','<th style="color:white; background-color:#5C00FE; border:1px solid grey; border-collapse: collapse;">BOM vs PAC</th>')
@@ -194,47 +195,47 @@ FL_item=FL_item_result.to_html().replace('<table border="1" class="dataframe">',
 #column align center
 FL_item=FL_item.replace("text-align: right;","text-align: center;")
 FL_item=FL_item.replace('<td>','<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">')
-FL_item=FL_item.replace('<th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">')
+FL_item=FL_item.replace('<th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">')
 
 #remove unamed for colspan
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 1</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 1</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
 
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 8</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 8</th>','')
 
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
 
 #remove unamed for colspan
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:white;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#C1FF00; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
 
 #remove column
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NaN</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NaN</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 #color in the npt vs gerp
-FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Seq</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Seq</td>')
-FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Level</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Level</td>')
-FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Parent Part</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Parent Part</td>')
-FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Child Part</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Child Part</td>')
-FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Description</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Description</td>')
-FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Qty</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Qty</td>')
-FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Price</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Price</td>')
+FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Seq</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Seq</td>')
+FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Level</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Level</td>')
+FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Parent Part</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Parent Part</td>')
+FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Child Part</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Child Part</td>')
+FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Description</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Description</td>')
+FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Qty</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Qty</td>')
+FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">Price</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Price</td>')
 
-FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">match</td>')
-FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
+FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">match</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">match</td>')
+FL_item=FL_item.replace('<td style= "background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
 
 #index 0 delete
-FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
+FL_item=FL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 
 ############ TL ############
@@ -243,46 +244,46 @@ TL_item=TL_item_result.to_html().replace('<table border="1" class="dataframe">',
 #column align center
 TL_item=TL_item.replace("text-align: right;","text-align: center;")
 TL_item=TL_item.replace('<td>','<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">')
-TL_item=TL_item.replace('<th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">')
+TL_item=TL_item.replace('<th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">')
 
 #remove unamed for colspan
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 1</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 1</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
 
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 8</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 8</th>','')
 
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
 
 #remove unamed for colspan
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#C1FF00; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
 
 #remove column
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NaN</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NaN</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 #color in the npt vs gerp
-TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Seq</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Seq</td>')
-TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Level</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Level</td>')
-TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Parent Part</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Parent Part</td>')
-TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Child Part</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Child Part</td>')
-TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Description</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Description</td>')
-TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Qty</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Qty</td>')
-TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Price</td>')
-TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">match</td>')
-TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
+TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Seq</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Seq</td>')
+TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Level</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Level</td>')
+TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Parent Part</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Parent Part</td>')
+TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Child Part</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Child Part</td>')
+TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Description</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Description</td>')
+TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Qty</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Qty</td>')
+TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Price</td>')
+TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">match</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">match</td>')
+TL_item=TL_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
 
 #index 0 delete
-TL_item=TL_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
+TL_item=TL_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 
 ############ DR ############
@@ -291,46 +292,46 @@ DR_item=DR_item_result.to_html().replace('<table border="1" class="dataframe">',
 #column align center
 DR_item=DR_item.replace("text-align: right;","text-align: center;")
 DR_item=DR_item.replace('<td>','<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">')
-DR_item=DR_item.replace('<th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">')
+DR_item=DR_item.replace('<th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">')
 
 #remove unamed for colspan
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 1</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 1</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 2</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 3</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 4</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 5</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 6</th>','')
 
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 8</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 8</th>','')
 
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 10</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 11</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 12</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 13</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 14</th>','')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">Unnamed: 15</th>','')
 
 #remove unamed for colspan
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#00FEC4; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NPT</th>')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>','<th colspan="2" style="color:navy;background-color:#C1FF00; border:1px solid grey; border-collapse: collapse;">NPT vs GERP</th>')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">GERP</th>','<th colspan="7" style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">GERP</th>')
 
 #remove column
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">NaN</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">NaN</th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 #color in the npt vs gerp
-DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Seq</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Seq</td>')
-DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Level</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Level</td>')
-DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Parent Part</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Parent Part</td>')
-DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Child Part</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Child Part</td>')
-DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Description</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Description</td>')
-DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Qty</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Qty</td>')
-DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Price</td>')
-DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">match</td>')
-DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style= "background-color:#EFE6FF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
+DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Seq</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Seq</td>')
+DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Level</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Level</td>')
+DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Parent Part</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Parent Part</td>')
+DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Child Part</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Child Part</td>')
+DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Description</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Description</td>')
+DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Qty</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Qty</td>')
+DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">Price</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">Price</td>')
+DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">match</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">match</td>')
+DR_item=DR_item.replace('<td style="background-color:white; border:1px solid grey; border-collapse: collapse;">price match</td>','<td style= "background-color:#ECFFAF; color:navy; font-weight:550; border:1px solid grey; border-collapse: collapse;">price match</td>')
 
 #index 0 delete
-DR_item=DR_item.replace('<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#EFE6FF; border:1px solid grey; border-collapse: collapse;"></th>')
+DR_item=DR_item.replace('<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;">0</th>','<th style="color:navy;background-color:#ECFFAF; border:1px solid grey; border-collapse: collapse;"></th>')
 
 ################################## Send email ################################## 
 server = smtplib.SMTP('lgekrhqmh01.lge.com:25')
@@ -381,7 +382,7 @@ etcFileName='FL_BOM_Comparison_0526.xlsx'
 with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/BOM Comparison_FL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
-    etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
+    etcPart.add_header('Content-DisPricesition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일2
@@ -389,7 +390,7 @@ etcFileName='TL_BOM_Comparison_0526.xlsx'
 with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/BOM Comparison_TL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
-    etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
+    etcPart.add_header('Content-DisPricesition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일3
@@ -397,7 +398,7 @@ etcFileName='DR_BOM_Comparison_0526.xlsx'
 with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/BOM Comparison_DR.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
-    etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
+    etcPart.add_header('Content-DisPricesition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 
@@ -406,7 +407,7 @@ etcFileName='result_0526.xlsx'
 with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/result_0526.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
-    etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
+    etcPart.add_header('Content-DisPricesition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 
@@ -415,4 +416,3 @@ with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/result_0526.xlsx', 'r
 server.send_message(msg)
 server.close()
 print("Sucess!!!")
-
