@@ -1,16 +1,12 @@
+import os
 import pandas as pd
-import matplotlib.pyplot as plt
-from itertools import repeat
+import numpy as np
 import smtplib
 import email
-from email import encoders
-from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
-import openpyxl
 from email.mime.application import MIMEApplication 
-import os 
-
 
 #####지난번에 했던 결과 소환
 FL_last_result=pd.read_excel('C:/Users/RnD Workstation/Documents/NPTGERP/0526/result_0526.xlsx', sheet_name="F3P2CYUBW.ABWEUUS_result")
@@ -376,13 +372,12 @@ msg.attach(MIMEText('<h4 style="font-family:Arial Narrow; color:navy">- NPT vs G
 msg.attach(DR_attach_item)
 
 
-
 #첨부 파일1
 etcFileName='FL_BOM_Comparison_0526.xlsx'
 with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/BOM Comparison_FL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
-    etcPart.add_header('Content-DisPricesition','attachment', filename=etcFileName)
+    etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일2
@@ -390,7 +385,7 @@ etcFileName='TL_BOM_Comparison_0526.xlsx'
 with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/BOM Comparison_TL.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
-    etcPart.add_header('Content-DisPricesition','attachment', filename=etcFileName)
+    etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 #첨부 파일3
@@ -398,7 +393,7 @@ etcFileName='DR_BOM_Comparison_0526.xlsx'
 with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/BOM Comparison_DR.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
-    etcPart.add_header('Content-DisPricesition','attachment', filename=etcFileName)
+    etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 
@@ -407,11 +402,10 @@ etcFileName='result_0526.xlsx'
 with open('C:/Users/RnD Workstation/Documents/NPTGERP/0526/result_0526.xlsx', 'rb') as etcFD : 
     etcPart = MIMEApplication( etcFD.read() )
     #첨부파일의 정보를 헤더로 추가
-    etcPart.add_header('Content-DisPricesition','attachment', filename=etcFileName)
+    etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart)
 
 
-print(FL_html)
 #메세지 보내고 확인하기
 server.send_message(msg)
 server.close()
